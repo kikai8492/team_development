@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to blogs_path, notice: "ブログを編集しました"
     else
-      render :new, notice: "編集に失敗しました"
+      render :edit, notice: "編集に失敗しました"
     end
   end
 
