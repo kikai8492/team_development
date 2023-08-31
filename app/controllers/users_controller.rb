@@ -21,20 +21,24 @@ class UsersController < ApplicationController
     set_user
     if @user.update(params_user)
       flash[:success] = "ユーザー情報を更新しました"
+      redirect_to user_path
     else
       flash[:danger] = "ユーザー情報の更新に失敗しました"
+      render :edit
     end
-    redirect_to user_path
+
   end
 
   def destroy
     set_user
     if @user.destroy
       flash[:success] = "削除しました"
+      redirect_to user_path
     else
       flash[:danger] = "削除に失敗しました"
+      render :edit
     end
-    redirect_to user_path
+
   end
 
   def show
