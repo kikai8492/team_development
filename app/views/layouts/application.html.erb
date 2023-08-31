@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <p><%= flash[:notice] %></p>
+  <p><%= flash[:alert] %></p>
+  <p><%= flash[:danger] %></p>
     <%= yield %>
   </body>
 </html>
